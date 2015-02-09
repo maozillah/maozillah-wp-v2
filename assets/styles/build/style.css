@@ -735,24 +735,30 @@ address {
    Layout
    ========================================================================== */
 #page {
-  max-width: 1000px;
+  max-width: 100%;
   margin: 20px auto;
 }
 
 .content-area {
-  float: left;
-  margin: 0 -25% 0 0;
-  width: 100%;
+  float: right;
+  width: 50%;
+  padding: 0 9% 0 9%;
+  height: 100%;
 }
 
-.site-main {
-  margin: 0 25% 0 0;
+.image-area {
+  width: 50%;
+  overflow-y: scroll;
+  height: 100%;
+  position: fixed;
+}
+.image-area::-webkit-scrollbar {
+  display: none;
 }
 
 .site-content .widget-area {
   float: right;
   overflow: hidden;
-  width: 25%;
 }
 
 .site-footer {
@@ -763,6 +769,12 @@ address {
 /* ==========================================================================
    Header
    ========================================================================== */
+.site-header {
+  position: fixed;
+  z-index: 200;
+  right: 0;
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
@@ -851,6 +863,54 @@ address {
   float: right;
   text-align: right;
   width: 50%;
+}
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+/* General styles for all menus */
+.cbp-spmenu {
+  background: #47a3da;
+  position: fixed;
+}
+.cbp-spmenu a {
+  display: block;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+.cbp-spmenu a:hover {
+  background: #258ecd;
+}
+.cbp-spmenu a:active {
+  background: #afdefa;
+  color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+.cbp-spmenu-vertical {
+  width: 240px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.cbp-spmenu-vertical a {
+  border-bottom: 1px solid #258ecd;
+  padding: 1em;
+}
+
+/* Vertical menu that slides from the left or right */
+.cbp-spmenu-right {
+  right: -240px;
+}
+.cbp-spmenu-right.cbp-spmenu-open {
+  right: 0px;
+}
+
+/* Transitions */
+.cbp-spmenu {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* ==========================================================================

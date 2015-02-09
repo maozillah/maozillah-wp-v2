@@ -17,6 +17,18 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<!-- javascript things that probably shouldn't be here -->
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/classie.js"></script>
+<script>
+			var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+				showRight = document.getElementById( 'showRight' );
+
+			showRight.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( menuRight, 'cbp-spmenu-open' );
+			}
+		</script>
+
 <?php wp_footer(); ?>
 
 </body>
