@@ -23,16 +23,8 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
-			<?php
-    $args = array(
-      'post_type' => 'project',
-      )
-    );
-    $products = new WP_Query( $args );
-    if( $products->have_posts() ) {
-      while( $products->have_posts() ) {
-        $products->the_post();
-        ?>
+			<?php 
+			while ( have_posts() ) : the_post(); ?>
 
 				<?php $attr = array(
 			        'class' => "archive-image",
