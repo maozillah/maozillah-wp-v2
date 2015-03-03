@@ -18,6 +18,22 @@
 	}
 }
 
+@include bp(phone) { 
+.cbp-spmenu-vertical {
+    font-size: 90%;
+    width: 190px;
+  }
+  .cbp-spmenu-left, .cbp-spmenu-push-toleft {
+    left: -190px;
+  }
+  .cbp-spmenu-right {
+    right: -190px;
+  }
+  .cbp-spmenu-push-toright {
+    left: 190px;
+  }
+ };
+
 /*
  * Mixin for clearfix
  * @include clearfix;

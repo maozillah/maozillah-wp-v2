@@ -17,7 +17,8 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<!-- <body <?php body_class(); ?> > -->
+<body class="cbp-spmenu-push">
 <div id="page" class="hfeed site">
 	<!--[if lt IE 9]>
 	    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -34,14 +35,21 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle"><?php _e( 'Primary Menu', '_mbbasetheme' ); ?></button>
 			
-			<button id="showRight">Navigation menu</button>
+			<div class="buttons">
+
+
+					<button id="showLeftPush">Show/Hide Left Push Menu</button>
+					<button id="showRightPush">Show/Hide Right Push Menu</button>
+
+			</div>
 
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div class="image-area">
-<?php wp_get_archives('type=alpha'); ?>
-
-	</div>
 
 	<div id="content" class="site-content">
+
+<!-- post header -->
+<div class="crop">
+		<?php if ( has_post_thumbnail() ) {	the_post_thumbnail( 'large', array( 'class' => 'full' ) ); } ?>
+</div>
